@@ -1,6 +1,6 @@
 import {Category} from "@/lib/types"
 
-const URL = `${process.env.PUBLIC_API_URL}`
+const URL = `${process.env.PUBLIC_API_URL}/categories`
 
 
 const getCategories = async ():Promise<Category[]>=> {
