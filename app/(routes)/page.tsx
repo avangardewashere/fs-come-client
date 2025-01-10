@@ -6,7 +6,7 @@ const page = () => {
     <div>
       <Container>
         <div className="space-y-18 pb-10">
-          <Billboard />
+          <Billboard data={[]} />
         </div>
       </Container>
     </div>
