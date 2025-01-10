@@ -1,5 +1,5 @@
 import React from 'react'
-import MainNav from './ui/MainNav'
+ 
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         <p className="text-center text-xs text-black">
             &copy; 2023 ClientStore, Inc. All rights reserved.
         </p>
-        <MainNav data={[]}/>
+     
       </div>
 
     </div>
