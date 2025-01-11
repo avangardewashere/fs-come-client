@@ -3,15 +3,23 @@
 import { Product } from "@/lib/types";
 import Image from "next/image";
 import IconButton from "./IconButton";
-import {     Expand, ShoppingCart } from "lucide-react";
+import { Expand, ShoppingCart } from "lucide-react";
 import Currency from "./Currency";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
   data: Product;
 }
 const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(`/propducts/${data.id}`);
+  };
   return (
-    <div className="bg-white group cursor-pointer rounded-xl border px-3 pb-2 space-y-4">
+    <div
+      onClick={handleClick}
+      className="bg-white group cursor-pointer rounded-xl border px-3 py-4 space-y-4"
+    >
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
           src={data?.images?.[0].url}
