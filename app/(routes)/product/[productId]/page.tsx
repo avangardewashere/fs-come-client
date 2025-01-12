@@ -1,5 +1,6 @@
 import getProducts from "@/actions/getProduct";
 import getSingleProduct from "@/actions/getSingleProduct";
+import ProductList from "@/components/ProductList";
 import { Container } from "@/components/ui/container";
 import React from "react";
 
@@ -26,6 +27,10 @@ const ProductSingle: React.FC<ProductPageProps> = async ({ params }) => {
               {/* Info */}
               Info
             </div>
+          </div>
+          <hr />
+          <div className="my-10">
+            <ProductList title="Related Items" items={suggestedProducts} />
           </div>
         </div>
       </Container>
