@@ -10,11 +10,11 @@ interface GalleryTabProps {
 
 const GalleryTab: React.FC<GalleryTabProps> = ({ image }) => {
   return (
-    <Tab className="reltie flex aspect-square cursor-pointer items-center rounded-md bg-white">
+    <Tab className="relative flex aspect-square cursor-pointer items-center rounded-md bg-white">
       {({ selected }) => {
         return (
           <div>
-            <span className="absolute hfull w-full aspect-square inset-0 overflow-hidden rounded-md">
+            <span className="absolute h-full w-full aspect-square inset-0 overflow-hidden rounded-md">
               <Image
                 alt=""
                 src={image.url}
@@ -24,7 +24,7 @@ const GalleryTab: React.FC<GalleryTabProps> = ({ image }) => {
             </span>
             <span
               className={cn(
-                "absolute inset=0 rounded-md ring-2 ring-offset-2",
+                "absolute inset-0 rounded-md ring-2 ring-offset-2",
                 selected ? "ring-black" : "ring-transparent"
               )}
             ></span>

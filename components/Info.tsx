@@ -8,10 +8,10 @@ const Info: React.FC<InfoProps> = ({ data }) => {
   return (
     <div>
       <h1 className="text-3xl font-bold text-gray-500">{data.name}</h1>
-      <div className="mt-3 flex items0end justify-between">
-        <p className="text-2xl text-gray-500">
+      <div className="mt-3 flex items-end justify-between">
+        <div className="text-2xl text-gray-500">
           <Currency value={data?.price} />
-        </p>
+        </div>
       </div>
       <hr className="my-4" />
       <div className="flex items-center gap-x-4">
@@ -23,7 +23,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
         <div
           className="h-6 w-6 rounded-full border border-gray-600"
           style={{ backgroundColor: data?.color?.value }}
-        ></div>
+        />
       </div>
     </div>
   );
