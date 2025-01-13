@@ -52,7 +52,9 @@ const Summary: React.FC<SumamryProps> = () => {
           <Currency value={totalPrice} />
         </div>
       </div>
-      <Button className="w-full mt-6">Checkout</Button>
+      <Button onClick={onCheckout} className="w-full mt-6">
+        Checkout
+      </Button>
     </div>
   );
 };
