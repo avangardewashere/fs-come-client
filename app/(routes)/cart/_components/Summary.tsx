@@ -3,18 +3,41 @@
 import Button from "@/components/ui/Button";
 import Currency from "@/components/ui/Currency";
 import useUseCart from "@/hooks/UseCart";
-
+import axios from "axios";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import toast from "react-hot-toast";
 interface SumamryProps {}
 
 const Summary: React.FC<SumamryProps> = () => {
+  const searchParams = useSearchParams();
   const cart = useUseCart();
 
   const items = useUseCart((state) => state.items);
   const removeAll = useUseCart((state) => state.removeAll);
 
+  useEffect(() => {
+    if (searchParams.get("success")) {
+      toast.success("Payment completed.");
+      removeAll();
+    }
+    if (searchParams.get("cancelled")) {
+      toast.error("Something went wrong");
+    }
+  }, []);
+
   const totalPrice = items.reduce((total, item) => {
     return total + Number(item.price);
   }, 0);
+
+  const onCheckout = async () => {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+      { productIds: items.map((item) => item.id) }
+    );
+
+    window.location = response.data.url;
+  };
 
   return (
     <div
