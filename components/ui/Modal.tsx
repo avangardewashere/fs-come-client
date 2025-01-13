@@ -18,7 +18,7 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
   return (
-    <Transition>
+    <Transition show={open}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
         <div className="fixed inset-0 bg-black bg-opacity-50">
           <div className="fixed inset-0 overflow-y-auto">
