@@ -6,6 +6,7 @@ import { Color, Size } from "@/lib/types";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Plus, X } from "lucide-react";
 import React, { useState } from "react";
+import Filter from "./Filter";
 
 interface MobileFilterProps {
   sizes: Size[];
