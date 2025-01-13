@@ -19,6 +19,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   };
   const previewModal = usePreviewModal();
 
+  const onAddToCart =() =>{
+    
+  }
+
   const OnPreview:MouseEventHandler<HTMLButtonElement> =(e) =>{
     e.stopPropagation();
 
@@ -46,7 +50,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
             />
             <IconButton
             
-              onClick={() => {}}
+              onClick={onAddToCart}
               icon={<ShoppingCart size={16} className="text-gray-600" />}
             />
           </div>
