@@ -31,6 +31,7 @@ const Summary: React.FC<SumamryProps> = () => {
   }, 0);
 
   const onCheckout = async () => {
+    console.log(process.env.NEXT_PUBLIC_API_URL," here")
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
       { productIds: items.map((item) => item.id) }
