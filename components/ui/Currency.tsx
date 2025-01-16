@@ -12,6 +12,9 @@ const formatter = new Intl.NumberFormat("en-US", {
 });
 
 const Currency: React.FC<CurrencyProps> = ({ value }) => {
+
+  //avoid hydration error
+  
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
